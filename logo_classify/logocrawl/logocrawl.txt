@@ -1,0 +1,12 @@
+{"image": "https://worldvectorlogo.com"}
+{"image": "https://worldvectorlogo.com/logo/google-play-store"}
+{"image": "https://worldvectorlogo.com/logo/facebook-messenger"}
+{"image": "https://worldvectorlogo.com/logo/facebook-messenger-white"}
+{"image": "https://worldvectorlogo.com/logo/wechat"}
+{"image": "https://worldvectorlogo.com/logo/photoshop-cc"}
+{"image": "https://worldvectorlogo.com/logo/adobe-illustrator-cc"}
+{"image": "https://worldvectorlogo.com/logo/facebook-icon"}
+{"image": "https://worldvectorlogo.com/logo/facebook-3"}
+{"image": "https://worldvectorlogo.com/logo/viber"}
+{"image": "https://worldvectorlogo.com/logo/snapchat"}
+{"image": "https://worldvectorlogo.com/logo/google-play"}
