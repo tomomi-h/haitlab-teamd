@@ -4,6 +4,8 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 import serial
 
+from datetime import datetime
+
 
 class IndexTemplateView(TemplateView):
     template_name = "index.html"
@@ -16,20 +18,24 @@ class IndexTemplateView(TemplateView):
                 ser.close()
         return render(request, self.template_name)
 
-class IndexTemplateView2(TemplateView):
-    template_name = "index2.html"
 
-    def check(self):
-        ser = serial.Serial('/dev/cu.usbmodem14101', 9600)
-        while True:
-            a = ""
-            for x in range(5):
-                out = ser.read()
-                out2 = out.strip().decode('utf-8')
-                a = a + out2
-            return a
+def output(request):
+    ser = serial.Serial('/dev/cu.usbmodem14101', 9600)
+    while True:
+        a = ""
+        for x in range(5):
+            out = ser.read()
+            out2 = out.strip().decode('utf-8')
+            a = a + out2
+            
+        context = {'result': a}
+        return render(request, 'index3.html', context)
 
-    def output(request):
-        context = {'result' : check(),}
-        return render(request, 'index2.html', context)
 
+def exercise(request):
+    now = datetime.now()
+    context = {
+        'text': "It's test",
+        'time': now,
+    }
+    return render(request, 'index2.html', context)

@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from serialLED.views import IndexTemplateView
-from serialLED.views import IndexTemplateView2
+from serialLED import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('serialLED/', IndexTemplateView.as_view(), name='index'),
-    path('output/', IndexTemplateView2.as_view(), name='index2')
+    path('output/', views.output, name='index3'),
+    path('test/', views.exercise, name='index2')
 ]
