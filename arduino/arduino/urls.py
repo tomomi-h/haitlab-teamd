@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('serialLED/', IndexTemplateView.as_view(), name='index'),
     path('output/', views.output, name='index3'),
-    path('test/', views.exercise, name='index2')
+    path('test/', views.exercise, name='index2'),
+    path('top/', views.top, name='index4')
 ]

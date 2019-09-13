@@ -20,16 +20,25 @@ class IndexTemplateView(TemplateView):
 
 
 def output(request):
-    ser = serial.Serial('/dev/cu.usbmodem14101', 9600)
     while True:
+        ser = serial.Serial('/dev/cu.usbmodem14101', 9600)
         a = ""
         for x in range(5):
             out = ser.read()
             out2 = out.strip().decode('utf-8')
             a = a + out2
-            
-        context = {'result': a}
-        return render(request, 'index3.html', context)
+        if float(a) < 500:
+            context = {'result': a}
+            return render(request, 'index3.html', context)
+        else:
+            return render(request, 'index5.html')
+            break
+
+
+def top(request):
+    return render(request, "index4.html")
+
+
 
 
 def exercise(request):
