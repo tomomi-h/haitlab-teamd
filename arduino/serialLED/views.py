@@ -28,17 +28,16 @@ def output(request):
             out2 = out.strip().decode('utf-8')
             a = a + out2
         if float(a) < 500:
-            context = {'result': a}
+            context = {'result': a,
+                       'action': "go"}
             return render(request, 'index3.html', context)
         else:
-            return render(request, 'index5.html')
+            return render(request, 'index5.html', )
             break
 
 
 def top(request):
     return render(request, "index4.html")
-
-
 
 
 def exercise(request):
